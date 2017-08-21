@@ -1,0 +1,15 @@
+<div class="row" *ngIf="genres && genres.length">
+    <div class="col">
+        <h1>Genres</h1>
+        <ul>
+            <li *ngFor="let genre of genres">
+                <a [routerLink]="['/genres', genre.id, genre.name]">{{genre.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row" *ngIf="!genres || !genres.length">
+    <div class="col">
+        <span>There are no items to show</span>
+    </div>
+</div>

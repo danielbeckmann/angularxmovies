@@ -1,0 +1,29 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isCollapsed = !isCollapsed" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <a class="navbar-brand" routerLink="/">AngularMovies</a>
+    <div class="collapse navbar-collapse" [collapse]="isCollapsed">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/movies" routerLinkActive="active">Movies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/genres" routerLinkActive="active">Genres</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/favorites" routerLinkActive="active">Favorites</a>
+            </li>
+        </ul>
+        <form class="form-inline search">
+            <input #searchBox id="search-box" class="form-control search" type="text" placeholder="Search..." name="search" autocomplete="off"
+                (keyup)="search(searchBox.value)">
+            <div *ngIf="(movies | async)?.length" class="dropdown-menu search-results" id="search-results">
+                <a *ngFor="let movie of movies | async | slice:0:8" class="dropdown-item" [routerLink]="['/movies', movie.id]" (click)="clearResults(searchBox)">
+          {{movie.title}}
+        </a>
+            </div>
+        </form>
+    </div>
+</nav>

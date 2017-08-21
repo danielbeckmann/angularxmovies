@@ -1,0 +1,15 @@
+<div class="movie-item">
+    <div class="media">
+        <a [routerLink]="['/movies', movie.id]">
+            <img *ngIf="movie.poster_path" class="d-flex mr-3" [src]="movie.poster_path | apiImage" alt="Poster" />
+        </a>
+        <div class="media-body">
+            <a [routerLink]="['/movies', movie.id]">{{movie.title}}</a>
+            <ul class="list-unstyled">
+                <li>Release date: {{movie.release_date | date:'dd.MM.yyyy'}}</li>
+                <li>Popularity: {{movie.popularity | number: '1.1-1'}}</li>
+                <li>Rating: {{movie.vote_average | rating}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

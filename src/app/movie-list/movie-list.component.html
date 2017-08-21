@@ -1,0 +1,30 @@
+<div class="row" *ngIf="movies && movies.length">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <h3>Now playing</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col sort-control">
+                <span>Sort by:</span>
+                <select [ngModel]="orderBy" (ngModelChange)="sort($event)" name="sort">
+              <option value="title">Title</option>
+              <option value="release_date">Release date</option>
+              <option value="-vote_average">Rating</option>
+              <option value="-popularity">Popularity</option>
+          </select>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let movie of movies" class="col-lg-4">
+                <app-movie [movie]="movie"></app-movie>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="!movies || !movies.length">
+    <div class="col">
+        <span>There are no items to show</span>
+    </div>
+</div>

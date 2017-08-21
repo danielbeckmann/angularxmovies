@@ -1,0 +1,25 @@
+<div class="row" *ngIf="genre">
+    <div class="col">
+        <h3>{{genre}} movies</h3>
+    </div>
+</div>
+<div class="row" *ngIf="movies && movies.length">
+    <div class="col">
+        <div class="row">
+            <div *ngFor="let movie of movies" class="col-lg-4">
+                <app-movie [movie]="movie"></app-movie>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <pagination class="pagination-sm" [totalItems]="totalItems" [(ngModel)]="currentPage" [maxSize]="5" [itemsPerPage]="itemsPerPage"
+                    [boundaryLinks]="true" [rotate]="false" (pageChanged)="pageChanged($event)"></pagination>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="!movies || !movies.length">
+    <div class="col">
+        <span>There are no items to show</span>
+    </div>
+</div>

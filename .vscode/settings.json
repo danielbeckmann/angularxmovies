@@ -1,0 +1,31 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.settings": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.DS_Store": true,
+        "**/*.jar": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/dist": true,
+        "**/docker": true,
+        "**/java": true,
+        "**/test-classes": true,
+        ".mvn": true,
+        ".apt_generated": true,
+        ".gitattributes": true,
+        ".gitignore": true,
+        ".yo-rc.json": true,
+        "Jenkinsfile": true,
+        ".project": true,
+        ".factorypath": true,
+        ".travis.yml": true,
+        ".settings": true,
+        "mvnw": true,
+        "mvnw.cmd": true,
+        "pom.xml": true,
+        "target": true
+    }
+}

@@ -1,0 +1,22 @@
+.navbar {
+    margin-bottom: 21px;
+}
+
+form.search {
+    position: relative;
+
+    input.search {
+        width: 230px;
+    }
+
+    .search-results {
+        right: 0;
+        display: block;
+        padding: 0;
+        overflow: hidden;
+        font-size: .9rem;
+        .dropdown-item {
+            padding: 0.5rem 0.75rem;
+        }
+    }
+}
